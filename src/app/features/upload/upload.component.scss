@@ -1,0 +1,16 @@
+@use '../../styles/theme.scss' as *;
+
+.upload-container {
+    text-align: center;
+    margin: 20px auto;
+
+    input {
+        display: block;
+        margin: 10px auto;
+    }
+
+    button {
+        background-color: $primary-color;
+        color: $text-color;
+    }
+}

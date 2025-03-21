@@ -26,13 +26,14 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles/theme.scss"
+              "src/app/styles/theme.scss"
             ],
             "scripts": []
           },
@@ -91,7 +92,7 @@
               }
             ],
             "styles": [
-              "src/styles/theme.scss"
+              "src/app/styles/theme.scss"
             ],
             "scripts": []
           }

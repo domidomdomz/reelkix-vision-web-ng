@@ -1,0 +1,21 @@
+<div class="results-container">
+    <h2>Analysis Results</h2>
+
+    <div *ngIf="analysisResult; else noResult">
+        <img [src]="uploadedImage" alt="Uploaded Shoe Image" />
+
+        <ul>
+            <li *ngIf="analysisResult.brand">Brand: {{ analysisResult.brand }}</li>
+            <li *ngIf="analysisResult.model">Model: {{ analysisResult.model }}</li>
+            <li *ngIf="analysisResult.colorway">Colorway: {{ analysisResult.colorway }}</li>
+            <li *ngIf="analysisResult.sku">SKU: {{ analysisResult.sku }}</li>
+            <li *ngIf="!analysisResult.brand && !analysisResult.model && !analysisResult.colorway && !analysisResult.sku">
+                {{ analysisResult.text }}
+            </li>
+        </ul>
+    </div>
+
+    <ng-template #noResult>
+        <p>No analysis result available.</p>
+    </ng-template>
+</div>

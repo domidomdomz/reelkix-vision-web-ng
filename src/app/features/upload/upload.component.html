@@ -1,1 +1,33 @@
-<p>upload works!</p>
+<div class="upload-container">
+    <h2>Upload or Capture a Shoe Image</h2>
+    
+    <!-- Webcam component for camera capture -->
+    <webcam [height]="300" [width]="400"></webcam>
+    
+    <!-- File Upload Input -->
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    
+    <!-- Upload Button -->
+    <button class="btn btn-danger mt-3" (click)="onUpload()">Upload</button>
+    
+    <!-- Loading Indicator -->
+    <div *ngIf="isLoading" class="loading-indicator">
+      <p>Loading... Please wait.</p>
+      <!-- Optionally, add a spinner graphic here -->
+    </div>
+    
+    <!-- Display Analysis Result Once Available -->
+    <div *ngIf="!isLoading && analysisResult" class="analysis-result">
+      <h3>Analysis Result</h3>
+      <img [src]="(selectedFile ? (analysisResult.imageUrl || '') : capturedImage)" alt="Uploaded Shoe Image" style="max-width: 100%;"/>
+      <ul>
+        <li *ngIf="analysisResult.analysis.brand">Brand: {{ analysisResult.analysis.brand }}</li>
+        <li *ngIf="analysisResult.analysis.model">Model: {{ analysisResult.analysis.model }}</li>
+        <li *ngIf="analysisResult.analysis.colorway">Colorway: {{ analysisResult.analysis.colorway }}</li>
+        <li *ngIf="analysisResult.analysis.sku">SKU: {{ analysisResult.analysis.sku }}</li>
+        <li>
+          {{ analysisResult.analysis.text }}
+        </li>
+      </ul>
+    </div>
+  </div>

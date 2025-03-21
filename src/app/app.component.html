@@ -1,7 +1,14 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container">
-      <img src="assets/logo.png" alt="Reelkix Logo" width="50" />
-      <h1 class="text-light">Reelkix Vision</h1>
+    <img src="assets/logo.png" alt="Reelkix Logo" width="50" />
+    <h1 class="text-light">Reelkix Vision</h1>
+    <div class="nav-links">
+      <a routerLink="/" routerLinkActive="active">Home</a>
+      <a routerLink="/results" routerLinkActive="active">Results</a>
+      <a routerLink="/socials" routerLinkActive="active">Socials</a>
+    </div>
   </div>
 </nav>
+
+<!-- This is where routed content is rendered -->
 <router-outlet></router-outlet>

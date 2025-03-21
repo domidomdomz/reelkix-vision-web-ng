@@ -29,3 +29,13 @@ a {
         font-size: 1.5rem;
     }
 }
+
+.nav-link {
+    margin-left: 10px;
+    color: $text-color;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,18 @@
+@use '../../styles/theme.scss' as *;
+
+.socials-container {
+    text-align: center;
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: 10px 0;
+
+            a {
+                color: $primary-color;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
